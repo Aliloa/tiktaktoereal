@@ -15,8 +15,8 @@ function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, setActivePlayer] = useState("X");
   const [players, setPlayers] = useState({
-    X: "Player 1",
-    O: "Player 2",
+    X: "Brown Bear",
+    O: "White Bear",
   });
 
   let gameBoard = [...initialGameBoard.map((array) => [...array])];
@@ -76,30 +76,36 @@ function App() {
       };
     });
   }
+
   return (
-    <main>
-      <div id="game-container">
-        <ol id="players" className="highlight-player">
-          <Player
-            name="Player 1"
-            symbol="X"
-            isActive={activePlayer === "X"}
-            onPlayerName={handlePlayerName}
-          />
-          <Player
-            name="Player 2"
-            symbol="O"
-            isActive={activePlayer === "O"}
-            onPlayerName={handlePlayerName}
-          />
-        </ol>
-        {(winner || hasDraw) && (
-          <GameOver winner={winner} onRestart={handleRestart} />
-        )}
-        <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
-      </div>
-      <Log turns={gameTurns}></Log>
-    </main>
+    <>
+      <header>
+        <h1>Silly Bears Battle (tic tac toe)</h1>
+      </header>
+      <main>
+        <div id="game-container">
+          <ol id="players" className="highlight-player">
+            <Player
+              name="Bear 1 ʕ•ᴥ•ʔ"
+              symbol="X"
+              isActive={activePlayer === "X"}
+              onPlayerName={handlePlayerName}
+            />
+            <Player
+              name="Bear 2 ʕoᴥOʔ"
+              symbol="O"
+              isActive={activePlayer === "O"}
+              onPlayerName={handlePlayerName}
+            />
+          </ol>
+          {(winner || hasDraw) && (
+            <GameOver winner={winner} onRestart={handleRestart} />
+          )}
+          <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
+        </div>
+        <Log turns={gameTurns}></Log>
+      </main>
+    </>
   );
 }
 

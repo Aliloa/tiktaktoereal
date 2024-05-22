@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   line-height: 1.5;
 
   color: #ebe7ef;
@@ -20,17 +20,22 @@ html {
 body {
   background: radial-gradient(
       circle at top,
-      rgba(241, 210, 70, 0.98),
-      rgba(250, 176, 103, 0.87)
+      rgba(255, 242, 184, 0.456),
+      rgba(250, 176, 103, 0.411)
     ),
-    url('bg-pattern-dark.png');
+    url("../public/bg.jpeg");
   background-repeat: repeat;
-  background-size: 100% 100%, 30% 30%, 100% 100%;
-  min-height: 110rem;
+  background-size: 100% 100%;
 }
 
 header {
   text-align: center;
+}
+
+main {
+  display: flex;
+  margin: auto;
+  width: fit-content;
 }
 
 header img {
@@ -41,7 +46,7 @@ header img {
 }
 
 h1 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 3rem;
   margin: 0 auto 3rem auto;
   color: #3f3b00;
@@ -49,7 +54,8 @@ h1 {
 
 #game-container {
   max-width: 45rem;
-  margin: 3rem auto;
+  margin: 0;
+  margin-left: 130px;
   padding: 2rem;
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
@@ -72,23 +78,24 @@ h1 {
   align-items: center;
   width: 50%;
   border: 2px solid transparent;
+  min-width: fit-content;
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #ffccc0;
   animation: pulse 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  color: #ffccc0;
 }
 
 #players button {
   width: 3rem;
   border: none;
   background: none;
-  color: #c3ba78;
+  color: #ffc0ae;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -97,7 +104,7 @@ h1 {
 }
 
 #players button:hover {
-  color: #f8ca31;
+  color: #ff8765;
 }
 
 .player {
@@ -105,6 +112,7 @@ h1 {
   padding: 0.5rem;
   border-radius: 4px;
   font-weight: bold;
+  min-width: fit-content;
 }
 
 .player-name {
@@ -153,7 +161,7 @@ ol {
   background: none;
   color: #f8c031;
   border: none;
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
@@ -186,8 +194,11 @@ ol {
   color: #3f3b00;
   font-size: 5rem;
   cursor: pointer;
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   padding: 1rem;
+}
+#game-board img {
+  width: 100%;
 }
 
 #game-over {
@@ -205,10 +216,10 @@ ol {
 }
 
 #game-over h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-align: center;
-  color: #fcd256;
+  color: #ffc0ae;
   margin: 0;
 }
 
@@ -223,27 +234,30 @@ ol {
   margin: 0 auto;
   font-size: 1.5rem;
   background: none;
-  border: 2px solid #fcd256;
-  color: #fcd256;
+  border: 2px solid #ffc0ae;
+  color: #ffc0ae;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s, color 0.2s;
+  transition:
+    all 0.2s,
+    color 0.2s;
   box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
 }
 
 #game-over button:hover {
-  background: #fcd256;
+  background: #d0ffbd;
   color: #3f3b00;
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
+  box-shadow: 0 0 20px rgba(186, 255, 190, 0.8);
 }
 
 #log {
   max-width: 20rem;
+  min-width: 130px;
   color: #3f3b00;
   list-style: none;
-  margin: 2rem auto;
+  margin: 0;
   padding: 0;
   text-align: center;
 }
@@ -265,7 +279,7 @@ ol {
 }
 
 #game-hints h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 2rem;
   margin: 0;
 }
@@ -322,15 +336,15 @@ ol {
 
 @keyframes pulse {
   0% {
-    border-color: #f6e35a;
-    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
+    border-color: #ffb7a7;
+    box-shadow: 0 0 0 0 rgba(255, 205, 194, 0.4);
   }
   50% {
-    border-color: #f8c031;
+    border-color: #ffccc0;
     box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
   }
   100% {
-    border-color: #f6e35a;
+    border-color: #ffddd5;
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
   }
 }
