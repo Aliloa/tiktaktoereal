@@ -80,7 +80,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Silly Bears Battle (tic tac toe)</h1>
+        <h1>Bears Battle (tic tac toe)</h1>
       </header>
       <main>
         <div id="game-container">
